@@ -1,0 +1,126 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #ffffff;
+  color: #333;
+  text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #b30000;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(5, 130px); /* 5 colonnes */
+  grid-gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  border: 8px solid #0b7a0b; /* un beau vert foncé, épais */
+  border-radius: 20px;        /* arrondir les coins pour un rendu moderne */
+  padding: 20px 10px;              /* un peu d’espace entre le bord et les cases */
+  background-color: #e8f5e9;  /* un vert très clair en fond (optionnel) */
+  box-shadow: 0 8px 25px rgba(11, 122, 11, 0.3); /* ombre verte douce */
+  max-width: calc(5 * 130px + 4 * 20px + 2 * 10px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.day {
+  background-color: transparent;
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+  font-size: 1.6em;
+  border-radius: 12px;
+  width: 130px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: background 0.3s;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.day:hover {
+  background-color: #cc0000;
+}
+
+
+
+.day.empty {
+  background-color: white;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day.empty img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.day-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  color: #e60000; /* rouge */
+  font-weight: bold;
+  font-size: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  user-select: none;
+}
+
+/* MODALE */
+
+.modal {
+  display: none; /* cachée par défaut */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6); /* fond noir semi-transparent */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
+  font-size: 1.2em;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #900;
+}
+
+.close-button:hover {
+  color: #600;
+}
+
