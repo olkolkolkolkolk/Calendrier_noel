@@ -8,7 +8,14 @@ body {
 
 h1 {
   margin-bottom: 20px;
-  color: #b30000;
+  color: #105c10;
+}
+
+p{
+  color: #b30202;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(5 * 130px + 4 * 20px + 2 * 10px);
 }
 
 #calendar {
@@ -17,11 +24,8 @@ h1 {
   grid-gap: 20px;
   justify-content: center;
   margin-top: 30px;
-  border: 8px solid #0b7a0b; /* un beau vert foncé, épais */
-  border-radius: 20px;        /* arrondir les coins pour un rendu moderne */
+  border: 16px solid #0b7a0b; /* un beau vert foncé, épais */
   padding: 20px 10px;              /* un peu d’espace entre le bord et les cases */
-  background-color: #e8f5e9;  /* un vert très clair en fond (optionnel) */
-  box-shadow: 0 8px 25px rgba(11, 122, 11, 0.3); /* ombre verte douce */
   max-width: calc(5 * 130px + 4 * 20px + 2 * 10px);
   margin-left: auto;
   margin-right: auto;
@@ -29,7 +33,7 @@ h1 {
 
 .day {
   background-color: transparent;
-   background-size: cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
