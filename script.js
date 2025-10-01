@@ -90,7 +90,7 @@ const bg = backgrounds[index % backgrounds.length];
     const currentMonth = now.getMonth() + 1; // mois de 1 à 12
     const dayNumber = parseInt(this.querySelector('.day-number').textContent);
 
-    if (currentMonth === 9) {
+    if (currentMonth === 10) {
       if (dayNumber <= today) {
         this.classList.add('opened');
         const modal = document.getElementById('modal');
@@ -136,3 +136,4 @@ window.addEventListener('click', function (event) {
     modal.style.display = 'none';
   }
 });
+
