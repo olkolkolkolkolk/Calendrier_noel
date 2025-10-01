@@ -26,8 +26,30 @@ const messages = [
 ];
 
 const backgrounds = [
-  'url("C:/Users/cgiliberto/OneDrive - TOULON PROVENCE MEDITERRANEE/Documents/animations numériques/calendrier motifs/13756422_5327613.jpg")',
-  'url("https://www.shutterstock.com/image-vector/beautiful-brown-batik-motif-design-260nw-2330474035.jpg")'
+  'url("https://img.freepik.com/vecteurs-libre/modele-art-deco-premium-design-plat_23-2149150038.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-premium/motif-floral-geometrique-design-abstrait-bleu-marine-or_1253114-46448.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/modele-conception-scandinave-plat_23-2148952197.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/modele-conception-scandinave-plat_23-2148948136.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/art-voronoi-est-structure-blocs-abstraite-motif-conception-arriere-plan_1017-54631.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/photos-gratuite/conception-abstraite-motifs-sans-couture_23-2151179082.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/foto-gratis/diseno-patrones-costuras-abstractos_23-2151179214.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/photos-gratuite/conception-motifs-abstraits-sans-couture_23-2151179083.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/photos-gratuite/conception-abstraite-motifs-sans-couture_23-2151179066.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/conception-modele-mosaique-geometrique-plat_23-2149286388.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/fond-motif-geometrique-design-plat_23-2149924295.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/motif-lignes-aquarelle-abstraite_23-2149203335.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/motif-geometrique-plat-boho_23-2149762191.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/free-vector/flat-scandinavian-design-pattern_23-2148948919.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/free-vector/flat-design-scandinavian-design-pattern_23-2148936070.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/modele-renouvellement-retro-dessine-main_23-2149737394.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-premium/feuilles-botaniques-abstraites-colorees-vecteur-modele-sans-couture-petits-points-illustration-design-pour-mode-tissu-textile-papier-peint-couverture-web-emballage-toutes-impressions-blanc_44285-2032.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/photos-premium/gros-plan-motif-feuilles-forme-eventail-fond-noir-ai-generative_955925-60248.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/photos-gratuite/conception-abstraite-motifs-sans-couture_23-2151179225.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/damasse-sans-soudure-fond_1217-847.jpg?semt=ais_incoming&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/damasse-sans-soudure-fond_1217-1341.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/arriere-plan-ornemental-floral-dore_23-2148437704.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/photos-premium/motif-notes-musique-papier-peint_916191-380657.jpg?semt=ais_hybrid&w=740&q=80")',
+  'url("https://img.freepik.com/vecteurs-libre/modele-conception-scandinave-plat_23-2148950515.jpg?semt=ais_hybrid&w=740&q=80")'
 ];
 
 const calendar = document.getElementById('calendar');
@@ -61,14 +83,25 @@ const bg = backgrounds[index % backgrounds.length];
   day.style.backgroundPosition = 'center';
   day.style.backgroundRepeat = 'no-repeat';
 
-  // ✅ Ajouter l'événement de clic
+ // Ajouter l'événement de clic avec contrôle sur la date
   day.addEventListener('click', function () {
-    if (!this.classList.contains('opened')) {
-      this.classList.add('opened');
-      const modal = document.getElementById('modal');
-      const modalMessage = document.getElementById('modal-message');
-      modalMessage.innerHTML = this.getAttribute('data-message');
-      modal.style.display = 'flex';
+    const now = new Date();
+    const today = now.getDate();
+    const currentMonth = now.getMonth() + 1; // mois de 1 à 12
+    const dayNumber = parseInt(this.querySelector('.day-number').textContent);
+
+    if (currentMonth === 9) {
+      if (dayNumber <= today) {
+        this.classList.add('opened');
+        const modal = document.getElementById('modal');
+        const modalMessage = document.getElementById('modal-message');
+        modalMessage.innerHTML = this.getAttribute('data-message');
+        modal.style.display = 'flex';
+      } else {
+        alert("Cette case ne peut pas encore être ouverte !");
+      }
+    } else {
+      alert("Le calendrier est disponible uniquement en décembre !");
     }
   });
 
@@ -81,9 +114,9 @@ const logoBox = document.createElement('div');
 logoBox.classList.add('day', 'empty');
 
 const logoImg = document.createElement('img');
-logoImg.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Christmas_tree_icon.svg/2048px-Christmas_tree_icon.svg.png";
+logoImg.src = "https://provence-med.media.tourinsoft.eu/upload/30655909-9f4152bcb0114836848fa1dfd0fc4b5d.jpg";
 logoImg.alt = "Logo";
-logoImg.style.width = "60px";
+logoImg.style.width = "100px";
 logoImg.style.height = "auto";
 
 logoBox.appendChild(logoImg);
