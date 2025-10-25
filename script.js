@@ -21,7 +21,7 @@ const messages = [
   `<p> <a href="">titre</a>, auteur</p><img src="" alt="mot" style="width:100px;"> <p> texte </p> `,
   `<p> <a href="">titre</a>, auteur</p><img src="" alt="mot" style="width:100px;"> <p> texte </p> `,
   `<p> <a href="">titre</a>, auteur</p><img src="" alt="mot" style="width:100px;"> <p> texte </p> `,
-  `<p> <a href="">titre</a>, auteur</p><img src="" alt="mot" style="width:100px;"> <p> texte </p> `,
+  `<p> <a href="">titre</a>, auteur</p><img src="" alt="mot" style="width:100px;"> <p> texte </p> `, 
 ];
 
 const backgrounds = [
@@ -135,3 +135,4 @@ window.addEventListener('click', function (event) {
     modal.style.display = 'none';
   }
 });
+
