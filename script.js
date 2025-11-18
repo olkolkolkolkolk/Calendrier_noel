@@ -114,7 +114,7 @@ const logoBox = document.createElement('div');
 logoBox.classList.add('day', 'empty');
 
 const logoImg = document.createElement('img');
-logoImg.src = "https://provence-med.media.tourinsoft.eu/upload/30655909-9f4152bcb0114836848fa1dfd0fc4b5d.jpg";
+logoImg.src = "logo.png";
 logoImg.alt = "Logo";
 logoImg.style.width = "100px";
 logoImg.style.height = "auto";
@@ -136,3 +136,4 @@ window.addEventListener('click', function (event) {
     modal.style.display = 'none';
   }
 });
+
